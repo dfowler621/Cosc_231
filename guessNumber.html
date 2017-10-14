@@ -1,0 +1,72 @@
+<!-- Program generates a random number between 1 and 100, then asks the user to 
+make a guess as to what the number is. If the user guessed correctly, the program 
+says that they win, and to enter another number to play again. If the user guesses too high, 
+the program says that they guessed too high, if the user guesses too low. the program says
+ that they guessed too high. Program repeats until correct number is guessed.
+
+Devin Fowler, Oct 13,2016 -->
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<script>
+	
+	
+	
+		var randomNum = Math.floor((Math.random() * 100) + 1);
+		
+		
+		
+	
+		function guessNumber(){
+		var guess = document.getElementById('guess').value;
+
+		
+		var name = document.getElementById('name').value;
+		
+		
+		var outputGuess = guess.toString();
+		document.getElementById('outputGuess').innerHTML = name + ", you guessed:" + outputGuess;
+		
+		var outputAnswer = document.getElementById;
+		document.getElementById('outputAnswer').innerHTML = "blank2";
+		
+		
+		
+		if(guess == randomNum){
+		document.getElementById("outputAnswer").innerHTML = name+", You are right! Enter a new number to try again";
+		randomNum = Math.floor((Math.random() * 100) + 1);
+		} else if(guess > randomNum){
+			document.getElementById("outputAnswer").innerHTML = name+", your guess is too high";
+		} else if(guess < randomNum){
+			document.getElementById("outputAnswer").innerHTML = name+", your guess is too low";
+		}
+		
+		
+		}
+		
+
+	</script>
+	</head>
+	
+	<body>
+	<h2>Guess My Number!</h2>
+	<p>Enter your first name, then enter the number that you guess. Based on the number that you choose, and the number that you are trying to guess,
+		the program will tell you whether you are too high, too low, or if you guessed the correct number.</p>
+	<hr>
+	<p> Valid numbers are: 1 through 100</p>
+	<br>
+	<p>Enter your First Name: <input id="name" type="text"></p>
+	<p>Enter your guess: <input id="guess" type="number" min="0" max="100"
+	onchange="guessNumber()"></p>
+	
+	
+	
+	<h2 id = "outputGuess"></h2>
+	<h2 id = "outputAnswer"></h2>
+	
+	
+	</body>
+	</html>

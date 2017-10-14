@@ -1,0 +1,21 @@
+<!--
+Devin Fowler/Project 10A/ 11/17/2016
+-->
+
+<!DOCTYPE html>
+<html>
+<title>Tax Calculator</title>
+<body>
+<p>The program generates random values, and calculates the tax for each value. </p>
+<form method ='post' action =''>
+	First Item:<input type="text" name="num1"><br />
+	Second Item:<input type="text" name="num2"><br />
+	Third Item:<input type="text" name="num3"><br />
+	Fourth Item:<input type="text" name="num4"><br />
+	Fifth Item:<input type="text" name="num5"><br />
+
+	<input type="submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+<!-- Program asks the user how many items they would like, then adds them up and displays the total when the "CLick for total" button is pressed.
+When the "reset for new order" button is pressed, the form resets
+ 
+Devin Fowler, Oct 26,2016 -->
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<style>
+	table, th, td {
+    
+    border-collapse: collapse;
+}
+</style>
+
+	<script>
+	function getTotal(){
+	
+	
+
+		
+		
+		var itemOne = document.getElementById('itemOne').value;
+		var itemTwo = document.getElementById('itemTwo').value;
+		var itemThree = document.getElementById('itemThree').value;
+		
+	
+		var total = (itemOne * 1.59) + (itemTwo * 0.59) + (itemThree * 2.09) ;
+		
+		var printTotal = 'The total is: $' + total;
+		
+
+		
+		
+		
+		
+		
+		
+		alert(printTotal);
+		
+		}
+		
+	</script>
+	</head>
+	
+	
+	<body>
+	<h2>My Item Shop Menu</h2>
+	
+	<table style="width:75" cellpadding="5">
+	
+	<tr>
+		<td><b>Items</b></td>
+		<td><b>Quantity</b></td>	
+	</tr>
+	<tr>
+	
+	<td>Item One(1.59c each) <input id="itemOne" type="number" step="0.01" onmouseover="Color = yellow"></td>
+	</tr>
+	<tr>
+	<td>Item Two(0.59c each) <input id="itemTwo" type="number" step="0.01"></td>
+	</tr>
+	<td>Item Three(2.09c each) <input id="itemThree" type="number" step="0.01"></td>
+	</tr>
+	</table>
+	
+	<button type="button"  onclick="getTotal()">Click for Total</button>
+	<FORM>
+	<INPUT TYPE="button" onClick="history.go(0)" VALUE="Reset for new order">
+	</FORM>
+	
+	
+	
+	
+	
+	
+	</body>
+	</html>

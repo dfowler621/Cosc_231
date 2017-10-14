@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+Description:Program asks for user input for an item, price and amount. When total button is pushed, the program
+calculates the total and outputs it.
+
+Author: Devin Fowler, 10/27/2016
+-->
+
+<head>
+<title>Array Receipt </title>
+  	<meta charset="utf-8" />
+  	<style>
+  		div {
+  			border: 1px solid black;
+  			background-color: lightGreen;
+  			margin: 50px;
+  			padding: 10px;
+  		}
+  		h1 {
+  		text-align: center;
+  		}
+		td{
+		text-align: right;
+		}
+  		</style>
+	<script type="text/javascript">
+	
+	
+	var itemsArray = [], costArray=[], quantities=[], total=0, text="";
+	
+	function displayReceipt(){
+	    
+	    total = 0;
+	    text = "";
+	    text="==============================================";
+	    text+="<br /><h2>Mini-Mart EMU Receipt: Devin Fowler</h2>";
+	    text+="<table border=1>";
+	    
+	   
+	    text+="<th>" + "Item" + "<th>" +  " Quantity"+ "<th>" + "Cost" ;
+	    
+		
+		flen = itemsArray.length;
+		for (i = 0; i < flen; i++) {
+			text += "<tr>" + "<td>" + itemsArray[i] + "</td> "  + "<td>" + quantities[i] + "</td>"
+			 + "<td>" + costArray[i] + "</td>";
+
+
+		}
+		
+	   text+="</table>";
+	    
+        
+        document.getElementById("demo").innerHTML = text;
+		
+	}	// **************  End of displayReceipt function  *****************
+		
+	function checkOut(){
+	    displayReceipt();
+	   
+	   
+ 		var total = 0.00;
+ 		for (var i = 0;  i < itemsArray.length; i++) {
+ 		total += (costArray[i] * quantities[i]);
+		
+ 		}
+ 	
+	    text += "Checkout total: " + total.toFixed(2).toString();
+        document.getElementById("demo").innerHTML = text;
+		
+
+	}	
+	
+	function insert(){
+	    
+	   
+		itemsArray.push(document.getElementById('item').value);
+		costArray.push(document.getElementById('cost').value);
+		quantities.push(document.getElementById('quantities').value);
+		
+		displayReceipt();
+	
+	}	
+  
+	</script>
+</head>
+
+<div>
+
+
+   <h1>...Mini-Mart EMU Online...</h1>
+   <p>
+   Enter your item information.<br>
+   Submit the item by clicking on "Add to Cart".<br>
+   Click on the Checkout button when done entering items.<br>
+   </p>
+
+   <form onsubmit="checkOut()">
+     
+      <input id="item" type="text" size="40" placeholder="Item" required/><br />
+      <input id="cost" type="number" size="40" placeholder="Cost" required /><br />
+       <input id="quantities" type="number" size="40" placeholder="Quantity" required/><br />
+      
+      <input type="reset" value="Add to Cart" onclick="insert()" />
+      <input type="submit" value="Go to Check Out" onclick="checkOut()"/>    
+   </form>
+   
+ 
+   
+   <p id="demo"></p>
+   </div>
+   
+</body>
+</html>

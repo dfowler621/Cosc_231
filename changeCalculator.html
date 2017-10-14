@@ -1,0 +1,65 @@
+<!--Program calculates the number of quarters, pennies, nickels and dimes that are to be returned to the customer, 
+based on the change amount that is entered by the user
+Devin Fowler: Oct, 13, 2016-->
+
+<!DOCTYPE html>
+
+<html>
+
+
+	<head>
+	<script>
+	function makeChange(){
+	
+	var changeAmount = document.getElementById('changeAmount').value;
+	
+	var quarters = Math.floor(changeAmount/25);
+	changeAmount = changeAmount%25;
+	
+	var dimes = Math.floor(changeAmount/10);
+	changeAmount = changeAmount%10;
+	
+	var nickels = Math.floor(changeAmount/5);
+	changeAmount = (changeAmount%5);
+	
+	var pennies = Math.floor(changeAmount);
+	
+	
+	
+	
+	var outputQuarters = quarters.toString();
+	document.getElementById('outputQuarters').innerHTML = "\xa0\xa0\xa0\xa0\xa0\xa0" + "Quarters: " +outputQuarters;
+	
+	var outputDimes = dimes.toString();
+	document.getElementById('outputDimes').innerHTML =   "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0" + "Dimes: " +outputDimes;
+	
+	var outputNickels = nickels.toString();
+	document.getElementById('outputNickels').innerHTML =  "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+ "Nickels: " +outputNickels;
+	
+	var outputPennies = pennies.toString();
+	document.getElementById('outputPennies').innerHTML =  "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+ "Pennies: " +outputPennies;
+	
+	
+	
+	}
+	
+	</script>
+	</head>
+	
+	<body>
+	<h2>Change calculator by Devin Fowler</h2>
+	<p>Enter the amount of change the customer is to get back and I will tell you the number of
+	quarters, nickels, dimes and pennies they are to get back.</p>
+	<hr>
+	
+	
+	<p> Enter the amount of cash back: <input id="changeAmount" type="number" min="0" max="99" onchange="makeChange()"></p>
+	
+	<h2> Change back...</h2>
+	<h2 id="outputQuarters"></h2>
+	<h2 id="outputDimes"></h2>
+	<h2 id="outputNickels"></h2>
+	<h2 id="outputPennies"></h2>
+	
+	</body>
+	</html>
